@@ -43,6 +43,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aula01\ConnectionFactory.cs" />
+    <Compile Include="Aula02\Do.cs" />
+    <Compile Include="Aula02\Fa.cs" />
+    <Compile Include="Aula02\INota.cs" />
+    <Compile Include="Aula02\La.cs" />
+    <Compile Include="Aula02\Mi.cs" />
+    <Compile Include="Aula02\NotasMusicais.cs" />
+    <Compile Include="Aula02\Piano.cs" />
+    <Compile Include="Aula02\Re.cs" />
+    <Compile Include="Aula02\Si.cs" />
+    <Compile Include="Aula02\Sol.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
