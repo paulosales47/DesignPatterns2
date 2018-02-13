@@ -53,6 +53,10 @@
     <Compile Include="Aula02\Re.cs" />
     <Compile Include="Aula02\Si.cs" />
     <Compile Include="Aula02\Sol.cs" />
+    <Compile Include="Aula03\Contrato.cs" />
+    <Compile Include="Aula03\Estado.cs" />
+    <Compile Include="Aula03\Historico.cs" />
+    <Compile Include="Aula03\TipoContrato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

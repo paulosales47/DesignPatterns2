@@ -1,7 +1,9 @@
 ﻿using DesignPatterns2.Aula01;
 using DesignPatterns2.Aula02;
+using DesignPatterns2.Aula03;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,44 +23,65 @@ namespace DesignPatterns2
 
             #region Aula 2
 
-            var notas = new NotasMusicais();
+            //var notas = new NotasMusicais();
 
-            IList<INota> musica = new List<INota>
-            {
-                notas.GetNota("do"),
-                notas.GetNota("re"),
-                notas.GetNota("mi"),
-                notas.GetNota("fa"),
-                notas.GetNota("fa"),
-                notas.GetNota("fa"),
+            //IList<INota> musica = new List<INota>
+            //{
+            //    notas.GetNota("do"),
+            //    notas.GetNota("re"),
+            //    notas.GetNota("mi"),
+            //    notas.GetNota("fa"),
+            //    notas.GetNota("fa"),
+            //    notas.GetNota("fa"),
 
-                notas.GetNota("do"),
-                notas.GetNota("re"),
-                notas.GetNota("do"),
-                notas.GetNota("re"),
-                notas.GetNota("re"),
-                notas.GetNota("re"),
+            //    notas.GetNota("do"),
+            //    notas.GetNota("re"),
+            //    notas.GetNota("do"),
+            //    notas.GetNota("re"),
+            //    notas.GetNota("re"),
+            //    notas.GetNota("re"),
 
-                notas.GetNota("do"),
-                notas.GetNota("sol"),
-                notas.GetNota("fa"),
-                notas.GetNota("mi"),
-                notas.GetNota("mi"),
-                notas.GetNota("mi"),
+            //    notas.GetNota("do"),
+            //    notas.GetNota("sol"),
+            //    notas.GetNota("fa"),
+            //    notas.GetNota("mi"),
+            //    notas.GetNota("mi"),
+            //    notas.GetNota("mi"),
 
-                notas.GetNota("do"),
-                notas.GetNota("re"),
-                notas.GetNota("mi"),
-                notas.GetNota("fa"),
-                notas.GetNota("fa"),
-                notas.GetNota("fa")
-            };
+            //    notas.GetNota("do"),
+            //    notas.GetNota("re"),
+            //    notas.GetNota("mi"),
+            //    notas.GetNota("fa"),
+            //    notas.GetNota("fa"),
+            //    notas.GetNota("fa")
+            //};
 
-            var piano = new Piano();
-            piano.Toca(musica);
+            //var piano = new Piano();
+            //piano.Toca(musica);
 
             #endregion Aula 2
+
+            #region Aula 3
+            var historico = new Historico();
+
+            Contrato contrato = new Contrato(DateTime.Now, "Paulo", TipoContrato.Novo);
+            historico.Adiciona(contrato.SalvaEstado());
+            
+            contrato.AvancaStatus();
+            historico.Adiciona(contrato.SalvaEstado());
+            
+            contrato.AvancaStatus();
+            historico.Adiciona(contrato.SalvaEstado());
+            
+            foreach (var estado in historico.ListaEstado)
+            {
+                Console.WriteLine(estado.Contrato.Tipo + " | " + estado.DataEstado.ToString("yyyy-MM-dd HH:mm:ss.fffffff", CultureInfo.InvariantCulture)); 
+            }
+
+            #endregion Aula 3
+
+            Console.ReadKey();
         }
-        
+
     }
 }
