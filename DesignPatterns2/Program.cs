@@ -1,6 +1,7 @@
 ﻿using DesignPatterns2.Aula01;
 using DesignPatterns2.Aula02;
 using DesignPatterns2.Aula03;
+using DesignPatterns2.Aula04;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -62,23 +63,36 @@ namespace DesignPatterns2
             #endregion Aula 2
 
             #region Aula 3
-            var historico = new Historico();
 
-            Contrato contrato = new Contrato(DateTime.Now, "Paulo", TipoContrato.Novo);
-            historico.Adiciona(contrato.SalvaEstado());
-            
-            contrato.AvancaStatus();
-            historico.Adiciona(contrato.SalvaEstado());
-            
-            contrato.AvancaStatus();
-            historico.Adiciona(contrato.SalvaEstado());
-            
-            foreach (var estado in historico.ListaEstado)
-            {
-                Console.WriteLine(estado.Contrato.Tipo + " | " + estado.DataEstado.ToString("yyyy-MM-dd HH:mm:ss.fffffff", CultureInfo.InvariantCulture)); 
-            }
+            //var historico = new Historico();
+
+            //Contrato contrato = new Contrato(DateTime.Now, "Paulo", TipoContrato.Novo);
+            //historico.Adiciona(contrato.SalvaEstado());
+
+            //contrato.AvancaStatus();
+            //historico.Adiciona(contrato.SalvaEstado());
+
+            //contrato.AvancaStatus();
+            //historico.Adiciona(contrato.SalvaEstado());
+
+            //foreach (var estado in historico.ListaEstado)
+            //{
+            //    Console.WriteLine(estado.Contrato.Tipo + " | " + estado.DataEstado.ToString("yyyy-MM-dd HH:mm:ss.fffffff", CultureInfo.InvariantCulture)); 
+            //}
 
             #endregion Aula 3
+
+            #region Aula 4
+
+            IExpressao esquerda = new Subtracao(new Numero(10), new Numero(5));
+            IExpressao direita = new Soma(new Numero(2), new Numero(10));
+
+            IExpressao conta = new Soma(esquerda, direita);
+            int resultado = conta.Avalia();
+            Console.WriteLine(resultado);
+
+            #endregion Aula 4
+
 
             Console.ReadKey();
         }
