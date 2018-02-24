@@ -5,6 +5,7 @@ using DesignPatterns2.Aula04;
 using DesignPatterns2.Aula05;
 using DesignPatterns2.Aula06;
 using DesignPatterns2.Aula07;
+using DesignPatterns2.Aula08;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -124,18 +125,29 @@ namespace DesignPatterns2
 
             #region Aula 7
 
-            var pedido1 = new Pedido("A", 1000);
-            var pedido2 = new Pedido("B", 5000);
+            //var pedido1 = new Pedido("A", 1000);
+            //var pedido2 = new Pedido("B", 5000);
 
-            var listaProcessamento = new FilaExecucaoPedido();
+            //var listaProcessamento = new FilaExecucaoPedido();
 
-            listaProcessamento.Adiciona(new PagaPedido(pedido1));
-            listaProcessamento.Adiciona(new PagaPedido(pedido2));
-            listaProcessamento.Adiciona(new FinalizaPedido(pedido1));
-            listaProcessamento.Processa();
-
+            //listaProcessamento.Adiciona(new PagaPedido(pedido1));
+            //listaProcessamento.Adiciona(new PagaPedido(pedido2));
+            //listaProcessamento.Adiciona(new FinalizaPedido(pedido1));
+            //listaProcessamento.Processa();
 
             #endregion Aula 7
+
+            #region Aula 8
+
+            var cliente = new Cliente();
+            cliente.Nome = "Paulo Henrique";
+            cliente.Endereco = "Teste";
+            cliente.DataNascimento = DateTime.Parse("20/06/1996");
+
+            var xml = new GeradorXML().GerarXML(cliente);
+            Console.WriteLine(xml);
+
+            #endregion Aula 8
 
 
             Console.ReadKey();

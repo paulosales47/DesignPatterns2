@@ -79,6 +79,9 @@
     <Compile Include="Aula07\PagaPedido.cs" />
     <Compile Include="Aula07\Pedido.cs" />
     <Compile Include="Aula07\Status.cs" />
+    <Compile Include="Aula08\Cliente.cs" />
+    <Compile Include="Aula08\GeradorXML.cs" />
+    <Compile Include="Aula09\Servico.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
