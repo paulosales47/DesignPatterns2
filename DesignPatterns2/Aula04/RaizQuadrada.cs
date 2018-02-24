@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns2.Aula05;
 
 namespace DesignPatterns2.Aula04
 {
@@ -13,6 +14,11 @@ namespace DesignPatterns2.Aula04
         public RaizQuadrada(IExpressao expressao)
         {
             _expressao = expressao;
+        }
+
+        public void Aceita(IVisitor visitor)
+        {
+            visitor.VisitaRaizQuadrada(this);
         }
 
         public double Avalia()

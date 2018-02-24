@@ -64,6 +64,9 @@
     <Compile Include="Aula04\RaizQuadrada.cs" />
     <Compile Include="Aula04\Soma.cs" />
     <Compile Include="Aula04\Subtracao.cs" />
+    <Compile Include="Aula05\ImprimeExpressaoFixaVisitor.cs" />
+    <Compile Include="Aula05\ImprimeExpressaoVisitor.cs" />
+    <Compile Include="Aula05\IVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
