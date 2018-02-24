@@ -3,6 +3,7 @@ using DesignPatterns2.Aula02;
 using DesignPatterns2.Aula03;
 using DesignPatterns2.Aula04;
 using DesignPatterns2.Aula05;
+using DesignPatterns2.Aula06;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -96,21 +97,28 @@ namespace DesignPatterns2
 
             #region Aula 5
 
-            IExpressao esquerda = new Subtracao(new Numero(10), new Numero(5));
-            IExpressao direita = new Soma(new Numero(2), new Numero(10));
+            //IExpressao esquerda = new Subtracao(new Numero(10), new Numero(5));
+            //IExpressao direita = new Soma(new Numero(2), new Numero(10));
 
-            IExpressao conta = new Soma(esquerda, direita);
-            var resultado = conta.Avalia();
-            Console.WriteLine(resultado);
+            //IExpressao conta = new Soma(esquerda, direita);
+            //var resultado = conta.Avalia();
+            //Console.WriteLine(resultado);
 
-            //Impressão
-            var visitor = new ImprimeExpressaoVisitor();
-            var visitorFixo = new ImprimeExpressaoFixaVisitor();
-            conta.Aceita(visitor);
-            conta.Aceita(visitorFixo);
+            ////Impressão
+            //var visitor = new ImprimeExpressaoVisitor();
+            //var visitorFixo = new ImprimeExpressaoFixaVisitor();
+            //conta.Aceita(visitor);
+            //conta.Aceita(visitorFixo);
 
             #endregion Aula 5
 
+            #region Aula 6
+
+            IMensagem mensagem = new MensagemAdministrador("Paulo");
+            IEnviador enviador = new EnviaMensagemSMS();
+            mensagem.Enviador = enviador;
+            mensagem.Envia();
+            #endregion Aula 6
 
 
 
