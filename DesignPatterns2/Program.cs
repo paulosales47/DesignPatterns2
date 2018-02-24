@@ -4,6 +4,7 @@ using DesignPatterns2.Aula03;
 using DesignPatterns2.Aula04;
 using DesignPatterns2.Aula05;
 using DesignPatterns2.Aula06;
+using DesignPatterns2.Aula07;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -114,12 +115,27 @@ namespace DesignPatterns2
 
             #region Aula 6
 
-            IMensagem mensagem = new MensagemAdministrador("Paulo");
-            IEnviador enviador = new EnviaMensagemSMS();
-            mensagem.Enviador = enviador;
-            mensagem.Envia();
+            //IMensagem mensagem = new MensagemAdministrador("Paulo");s
+            //IEnviador enviador = new EnviaMensagemSMS();
+            //mensagem.Enviador = enviador;
+            //mensagem.Envia();
+
             #endregion Aula 6
 
+            #region Aula 7
+
+            var pedido1 = new Pedido("A", 1000);
+            var pedido2 = new Pedido("B", 5000);
+
+            var listaProcessamento = new FilaExecucaoPedido();
+
+            listaProcessamento.Adiciona(new PagaPedido(pedido1));
+            listaProcessamento.Adiciona(new PagaPedido(pedido2));
+            listaProcessamento.Adiciona(new FinalizaPedido(pedido1));
+            listaProcessamento.Processa();
+
+
+            #endregion Aula 7
 
 
             Console.ReadKey();
